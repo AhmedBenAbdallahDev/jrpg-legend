@@ -127,7 +127,7 @@ const PlatformCard = ({ name, core, abbreviation, year, color, slug, img }) => {
         <img
           src={img}
           alt=""
-          className="absolute w-full h-full opacity-80 object-contain"
+          className="absolute w-full h-full opacity-80 object-cover"
         />
       </div>
     </Link>
@@ -143,7 +143,7 @@ export default function PlatformsPage() {
       slug: "nes",
       year: "1983",
       color: "red-600",
-      img: "https://upload.wikimedia.org/wikipedia/commons/b/b2/NES-Console-Set.png",
+      img: "category/console/NES-Console-Set.png",
     },
     {
       name: "Super Nintendo",
@@ -152,7 +152,7 @@ export default function PlatformsPage() {
       slug: "snes",
       year: "1990",
       color: "purple-600",
-      img: "https://upload.wikimedia.org/wikipedia/commons/b/b2/NES-Console-Set.png",
+      img: "category/console/NES-Console-Set.png",
     },
     {
       name: "Nintendo 64",
@@ -161,7 +161,7 @@ export default function PlatformsPage() {
       slug: "n64",
       year: "1996",
       color: "green-600",
-      img: "https://upload.wikimedia.org/wikipedia/commons/b/b2/NES-Console-Set.png",
+      img: "category/console/NES-Console-Set.png",
     },
     {
       name: "Game Boy",
@@ -170,7 +170,7 @@ export default function PlatformsPage() {
       slug: "gb",
       year: "1989",
       color: "gray-600",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Game-Boy-FL.png/960px-Game-Boy-FL.png",
+      img: "category/console/Game-Boy-FL.png",
     },
     {
       name: "Game Boy Color",
@@ -179,7 +179,7 @@ export default function PlatformsPage() {
       slug: "gbc",
       year: "1998",
       color: "yellow-500",
-      img: "https://upload.wikimedia.org/wikipedia/commons/3/35/Nintendo-Game-Boy-Color-FL.png",
+      img: "category/console/Nintendo-Game-Boy-Color-FL.png",
     },
     {
       name: "Game Boy Advance",
@@ -188,7 +188,7 @@ export default function PlatformsPage() {
       slug: "gba",
       year: "2001",
       color: "indigo-600",
-      img: "https://upload.wikimedia.org/wikipedia/commons/1/14/Nintendo-Game-Boy-Advance-Black-FL.png",
+      img: "category/console/Nintendo-Game-Boy-Advance-Black-FL.png",
     },
     {
       name: "Nintendo DS",
@@ -197,7 +197,7 @@ export default function PlatformsPage() {
       slug: "nds",
       year: "2004",
       color: "blue-500",
-      img: "https://upload.wikimedia.org/wikipedia/commons/1/14/Nintendo-Game-Boy-Advance-Black-FL.png",
+      img: "category/console/Nintendo-Game-Boy-Advance-Black-FL.png",
     },
     {
       name: "PlayStation",
@@ -206,7 +206,7 @@ export default function PlatformsPage() {
       slug: "psx",
       year: "1994",
       color: "gray-800",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/95/PSX-Console-wController.png",
+      img: "category/console/PSX-Console-wController.png",
     },
     {
       name: "PlayStation Portable",
@@ -215,7 +215,7 @@ export default function PlatformsPage() {
       slug: "psp",
       year: "2004",
       color: "slate-500",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/PSP-1000.png",
+      img: "category/console/PSP-1000.png",
     },
     {
       name: "Sega Genesis",
@@ -224,7 +224,7 @@ export default function PlatformsPage() {
       slug: "genesis",
       year: "1988",
       color: "red-700",
-      img: "https://upload.wikimedia.org/wikipedia/commons/1/19/Sega-Genesis-NA-Mk2-Console-Set.png",
+      img: "category/console/Sega-Genesis-NA-Mk2-Console-Set.png",
     },
     {
       name: "Sega CD",
@@ -233,7 +233,7 @@ export default function PlatformsPage() {
       slug: "segacd",
       year: "1991",
       color: "red-800",
-      img: "https://upload.wikimedia.org/wikipedia/commons/0/0c/MegaCD.png",
+      img: "category/console/MegaCD.png",
     },
     {
       name: "Sega Saturn",
@@ -242,7 +242,7 @@ export default function PlatformsPage() {
       slug: "saturn",
       year: "1994",
       color: "gray-700",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sega-Saturn-Console-Set-Mk2.png/1280px-Sega-Saturn-Console-Set-Mk2.png",
+      img: "category/console/Sega-Saturn-Console-Set-Mk2.png",
     },
     {
       name: "Arcade",
@@ -251,7 +251,7 @@ export default function PlatformsPage() {
       slug: "arcade",
       year: "Various",
       color: "purple-800",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sega-Saturn-Console-Set-Mk2.png/1280px-Sega-Saturn-Console-Set-Mk2.png",
+      img: "category/console/Sega-Saturn-Console-Set-Mk2.png",
     },
   ];
 
