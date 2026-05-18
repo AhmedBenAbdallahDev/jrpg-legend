@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 export async function GET(request, { params }) {
   try {
-    const { slug } = params;
+    const { slug } = await params;
     
     if (!slug) {
       return new Response('Game slug is required', { status: 400 });
