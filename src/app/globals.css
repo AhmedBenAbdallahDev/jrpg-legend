@@ -1,6 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-main: var(--main);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-error: var(--error);
+  --color-success: var(--success);
+
+  --background-image-accent-gradient: linear-gradient(0deg, rgba(254, 137, 31, 1) 0%, rgba(254, 182, 35, 1) 100%);
+
+  --font-sans: var(--body-font);
+  --font-heading: var(--heading-font);
+}
 
 @layer base {
   html {

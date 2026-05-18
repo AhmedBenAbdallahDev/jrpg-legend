@@ -36,8 +36,9 @@ const getCategoryIcon = (slug) => {
   }
 };
 
-export default async function Page(req) {
-  const searchQuery = req.searchParams.q;
+export default async function Page(props) {
+  const searchParams = await props.searchParams;
+  const searchQuery = searchParams.q;
 
   let games;
   if (searchQuery) {

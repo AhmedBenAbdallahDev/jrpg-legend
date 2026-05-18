@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/EmulatorJS/EmulatorJS#readme",
   "dependencies": {
-    "uglify-js": "^3.17.4",
-    "uglifycss": "0.0.29"
+    "uglify-js": "^3.19.3",
+    "uglifycss": "^0.0.29"
   }
 }

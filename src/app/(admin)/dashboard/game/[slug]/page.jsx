@@ -3,7 +3,8 @@ import { getGameById, getGameCategories } from "@/lib/adminQueries";
 import GameForm from "@/app/(admin)/dashboard/game/(form)/form";
 
 export default async function Page({params}) {
-  const gameId = params.slug;
+  const resolvedParams = await params;
+  const gameId = resolvedParams.slug;
   const [gameData, categories] = await Promise.all([
     getGameById(parseInt(gameId)),
     getGameCategories()
