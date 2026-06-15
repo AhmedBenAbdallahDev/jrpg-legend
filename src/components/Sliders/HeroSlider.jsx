@@ -18,7 +18,7 @@ export default function HeroSlider() {
         scrollbar={{ draggable: true }}
         className="h-[340px] md:h-[480px] w-full mb-6 rounded-lg border border-accent-secondary bg-main"
         style={{
-          "--swiper-pagination-color": "#FFBA08",
+          "--swiper-pagination-color": "#FFF",
           "--swiper-pagination-bullet-incactive-color": "#999999",
           "--swiper-pagination-bullet-incactive-opacity": "1",
           "--swiper-pagination-bullet-size": "0.6em",
@@ -45,7 +45,7 @@ export default function HeroSlider() {
             </p>
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-black font-medium bg-yellow-500 hover:bg-yellow-400 py-2 px-5 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 text-black font-medium bg-accent py-2 px-5 rounded-lg transition-colors"
             >
               <PlayIcon className="w-4 h-4" />
               <span>Play Now</span>
@@ -68,7 +68,7 @@ export default function HeroSlider() {
             </p>
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-black font-medium bg-yellow-500 hover:bg-yellow-400 py-2 px-5 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 text-black font-medium bg-accent py-2 px-5 rounded-lg transition-colors"
             >
               <PlayIcon className="w-4 h-4" />
               <span>Play Now</span>
