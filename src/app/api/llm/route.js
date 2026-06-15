@@ -1,9 +1,11 @@
-import { chatCompletion, chatStream } from "@/lib/nvidia-llm";
+import { chatCompletion, chatStream, isConfigured } from "@/lib/nvidia-llm";
 
 /**
  * POST /api/llm
  *
  * Send a chat request to the NVIDIA LLM (Mistral Large 3).
+ * This endpoint is completely optional — if NVIDIA_API_KEY is not set,
+ * it returns a clean 503 instead of crashing.
  *
  * Request body (JSON):
  *   {
@@ -17,9 +19,20 @@ import { chatCompletion, chatStream } from "@/lib/nvidia-llm";
  *   200  — { content: "..." }                (non-streaming)
  *   200  — text/event-stream                 (streaming)
  *   400  — { error: "..." }                  (bad request)
- *   500  — { error: "..." }                  (server error)
+ *   503  — { error: "..." }                  (AI not configured)
  */
 export async function POST(request) {
+  // --- Graceful early exit: AI not configured ---
+  if (!isConfigured()) {
+    return Response.json(
+      {
+        error: "AI features are not configured on this deployment.",
+        configured: false,
+      },
+      { status: 503 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { messages, stream = false, maxTokens, temperature } = body;
@@ -47,8 +60,16 @@ export async function POST(request) {
 
     // --- Non-streaming response ---
     const result = await chatCompletion(messages, { maxTokens, temperature });
-    const content = result?.choices?.[0]?.message?.content ?? "";
 
+    // Handle structured error returned by chatCompletion.
+    if (result?.error) {
+      return Response.json(
+        { error: result.message, configured: isConfigured() },
+        { status: result.status || 500 }
+      );
+    }
+
+    const content = result?.choices?.[0]?.message?.content ?? "";
     return Response.json({ content });
   } catch (error) {
     console.error("[API /api/llm]", error?.message || error);
