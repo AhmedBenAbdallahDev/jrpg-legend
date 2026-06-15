@@ -33,7 +33,7 @@ export const themes = {
       primary: "#282A36",
       main: "#0e0d11",
       accent: "#FF79C6",
-      "accent-secondary": "##6272A4",
+      "accent-secondary": "#6272A4",
       error: "#FF5555",
       success: "#50FA7B",
     },
