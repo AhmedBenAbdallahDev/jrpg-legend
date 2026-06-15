@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
+/*
+ * Tailwind v4 @theme — defines design tokens as Tailwind utilities.
+ *
+ * Each token references a CSS custom property set by ThemeProvider on <html>.
+ * Fallback values ensure the default dark theme renders correctly even
+ * before JavaScript hydrates (SSR, slow connection, no-JS).
+ */
 @theme {
-  --color-primary: var(--primary);
-  --color-main: var(--main);
-  --color-accent: var(--accent);
-  --color-accent-secondary: var(--accent-secondary);
-  --color-error: var(--error);
-  --color-success: var(--success);
+  --color-primary: var(--primary, #071D2C);
+  --color-main: var(--main, #031322);
+  --color-accent: var(--accent, #446171);
+  --color-accent-secondary: var(--accent-secondary, #0A2737);
+  --color-error: var(--error, #dc2626);
+  --color-success: var(--success, #16a34a);
 
-  --background-image-accent-gradient: linear-gradient(0deg, rgba(254, 137, 31, 1) 0%, rgba(254, 182, 35, 1) 100%);
+  --background-image-accent-gradient: linear-gradient(0deg, var(--accent, #446171) 0%, color-mix(in srgb, var(--accent, #446171) 70%, white) 100%);
 
   --font-sans: var(--body-font);
   --font-heading: var(--heading-font);
@@ -16,10 +23,14 @@
 
 @layer base {
   html {
-    @apply text-slate-50;
+    @apply bg-main text-slate-50 min-h-screen;
+    color-scheme: dark;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   body {
     font-family: var(--body-font);
+    @apply bg-main min-h-screen;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
